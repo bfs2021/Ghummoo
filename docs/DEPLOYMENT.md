@@ -9,7 +9,8 @@
 - **Local/demo:** nothing to do (embedded MongoDB).
 - **Production:** create a free MongoDB Atlas cluster, allow network access from your host, and set
   `MONGODB_URI`. On first deploy, either set `SEED_ON_EMPTY=true` for one boot or run
-  `npm run seed --prefix server -- --force` once (from the repo root; `npm run seed -- --force` does not pass the flag through).
+  `npm run seed -- --force` once (from the repo root; the seed script refuses a remote or production
+  database without `--force`).
 - Note: the Atlas URI in the old `server/.env` points to a cluster that no longer exists
   (DNS NXDOMAIN), so it has been commented out.
 
