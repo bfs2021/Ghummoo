@@ -75,8 +75,8 @@ test('the CLI refuses a remote target before connecting and prints a masked targ
 
   assert.equal(result.status, 1);
   const output = `${result.stdout}${result.stderr}`;
-  assert.match(output, /cluster\.example\.net\/ghumo/);
-  assert.match(output, /--force/);
+  assert.ok(output.includes('cluster.example.net/ghumo'));
+  assert.ok(output.includes('--force'));
   assert.ok(!output.includes('s3cret'));
   assert.ok(!output.includes('About to wipe and reseed'));
 });
